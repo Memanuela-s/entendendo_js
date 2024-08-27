@@ -1,35 +1,30 @@
-/*
-Informe se um aluno está aprovado,
-de recuperação uo reprovado
-seguindo os seguintes critérios:
-informar 3 notas.
-media > 6: aprovado.
-media < 4: reprovado.
- 
-Obs use o prompt e exiba os resultado em alert.
- 
-*/
-let nome1 = "";
-let nota1 =0, nota2=0;
-let mensagem ="";
+/*Faça um algoritmo para a leitura de duas notas parciais de um aluno. 
+O algoritmo deve calcular a média alcançada por aluno e apresentar:
+A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
+A mensagem "Reprovado", se a média for menor do que cinco;
+A mensagem “Recuperação", se a média estiver entre cinco e sete.*/
 
-nome1 = prompt("digite o nome do aluno:");
-nota1 = parseFloat(prompt("digite a nota 1 do aluno:"));
-nota2 = parseFloat(prompt("digite a nota 2 do aluno:"));
+//ENTRADA DE DADOS
+let nome = prompt("Informe seu nome");
+let n1 = parseFloat(prompt("Informe a Nota 1: "));
+let n2 = parseFloat(prompt("Informe a Nota 2: "));
+let n3 = parseFloat(prompt("Informe a Nota 3: "));
+const quantidadeNotas = 3;
 
-let media = 0;
-media = (nota1 + nota2) /2;
+//PROCESSAR
+let media = (n1 + n2 + n3) / quantidadeNotas;
+let mensagem = "";
+//COMAPARAR
+if (media >= 7) {
+    mensagem = "O Aluno está Aprovado!";
+}
+else if (media >= 5) {
+    mensagem = "O Aluno está Recuperação!";
 
-if (media >7) {
-    mensagem = "Aprovado"
+} else {
+    mensagem = "O Aluno está Reprovado!";
 }
 
-else if(media >=5){
-    mensagem = "Recuperação"
-}
-else  {
-    mensagem = "Reprovado"
-}
-
-alert(nome1 + mensagem);
+//alert(nome + ', ' + mensagem);
+alert(`${nome}, ${mensagem}`);
 
